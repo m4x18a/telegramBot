@@ -1,8 +1,8 @@
 import telebot
-import configure
+import configures
 from googletrans import Translator
 
-bot = telebot.TeleBot(configure.config['token'])
+bot = telebot.TeleBot(configures.config['token'])
 
 
 @bot.message_handler(commands=['start', 'help'])
