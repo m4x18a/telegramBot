@@ -27,7 +27,7 @@ def send_welcome(message):
     bot.send_message(message.chat.id, '\n'.join(languages_list))
 
 @bot.message_handler(func=lambda m: True)
-def translate_msg(message):
+def translate_bot_request(message):
     query = str(message.text).split('-')
     example = Translate()
     if len(query) == 1:
