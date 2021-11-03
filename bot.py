@@ -2,6 +2,7 @@ import telebot
 import configure
 from logic import languages_list, Translate
 
+
 bot = telebot.TeleBot(configure.config['token'])
 
 
@@ -22,9 +23,11 @@ def send_welcome(message):
                      "\n"
                      "You can get list of languages by command /lang")
 
+
 @bot.message_handler(commands=['lang'])
 def send_welcome(message):
     bot.send_message(message.chat.id, '\n'.join(languages_list))
+
 
 @bot.message_handler(func=lambda m: True)
 def translate_bot_request(message):

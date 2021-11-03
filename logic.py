@@ -1,5 +1,6 @@
 from googletrans import Translator
 
+
 class Translate(object):
     def __init__(self):
         self.src_lang = 'ru'
@@ -8,6 +9,7 @@ class Translate(object):
     def translate_msg(self, msg_text):
         translator = Translator()
         return translator.translate(msg_text, dest=self.dest_lang, src=self.src_lang)
+
 
 languages_list = [
         'af-afrikaans',

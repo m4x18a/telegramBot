@@ -5,12 +5,12 @@ from logic import Translate, languages_list
 app = Flask(__name__)
 
 
-@app.route('/languages', methods = ['GET'])
+@app.route('/languages', methods=['GET'])
 def get_lang_list():
     return jsonify(languages_list)
 
 
-@app.route('/translate', methods = ['GET', 'POST'])
+@app.route('/translate', methods=['GET', 'POST'])
 def translate_web_request():
     if request.method == 'GET':
         return jsonify('Введи фразу для перевода в формате json')
@@ -25,7 +25,6 @@ def translate_web_request():
         else:
             msg_text = json_msg['text']
             return example.translate_msg(msg_text).text
-
 
 
 if __name__ == '__main__':
